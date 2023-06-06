@@ -1,0 +1,89 @@
+
+/* /END CLEARFIX */
+
+/* 
+=====================================================
+	Layout & Framework
+===================================================== */
+
+body {
+    background-color:silver;
+    height : 100vh;
+    /* width:auto;
+    max-width: 100%; */
+}
+
+
+
+*{
+    border: 1px solid black;
+}
+
+h1{
+    text-align: center;
+}
+
+div {
+    width : 24%;
+    display: inline-block;
+    background-color: white;
+    height :22%;
+    
+    padding-left: 10px;
+    
+    border:solid 1px black;
+   
+}
+
+
+/* .container{
+    display:flex; 
+    gap: 1rem;
+    background-color: aqua;
+    border: 10px solid firebrick;
+    flex-direction: column; */
+    /* justify-content: space-evenly; */
+    /* align-items: center; */
+    /* height:100vh; */
+   
+    
+   
+    /* margin: 0;
+    padding:0; */
+    
+
+/* }
+
+.container > * { */
+    
+    /* flex:1; */
+    /* width:100%; works like flex  */
+    /* flex-basis: 100%; same  */
+/* } */
+
+/* main,header,footer {
+    
+    background-color: green;
+}
+
+@media (min-width:600px){
+    .container{
+        flex-direction:row;
+    }
+} */
+
+
+
+
+/* 
+=====================================================
+	Dynamic Displays
+===================================================== */
+
+
+
+
+
+
+
+
