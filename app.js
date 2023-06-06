@@ -6,7 +6,9 @@ let gameDone = false
 let choiceCount = 0;
 
 let firstTile = null;
+let firstTileID = null;
 let secondTile = null;
+let secondTileID = null;
 
 let pair0 = false
 let pair1 = false
@@ -74,7 +76,7 @@ function giveColor(){
         
     listOfObjTiles[i].color = colorsArr[color]  //allows to store the orignal color of the tile when rest back to deafult color,saves to the object tile related to the elem in html
     
-    
+       
 
 
         // console.log(listOfObjTiles[i].color)
@@ -157,26 +159,7 @@ function giveColor(){
             }  //end of switch statement
 
         
-            document.getElementById(listOfObjTiles[i].id).addEventListener('click',function(){
-                console.log('clicked')
-                
-                document.getElementById(listOfObjTiles[i].id).style.backgroundColor = listOfObjTiles[i].color
-
-
-                if (firstTile === null ) {
-                firstTile = listOfObjTiles[i].color;  
-                console.log('you choose ' + firstTile + " as your first tile")
-                } 
-                else if(secondTile == null){
-                    secondTile = listOfObjTiles[i].color
-                    console.log('you choose ' + secondTile + " as your second tile")
-                }
-
-
-
-
-
-             })
+            
 
 
 
@@ -192,38 +175,79 @@ function giveColor(){
      coverTiles()  
 
 
-
-
-
-
      
-        pair0 == true;
+        pair0 = true;
         console.log(pair0)
      
     
     for(let i = 0; i < listOfObjTiles.length; i++){   //this loop gives every tile a click function 
+        document.getElementById(listOfObjTiles[i].id).addEventListener('click',function(){
+            // console.log('clicked')
+            
+            document.getElementById(listOfObjTiles[i].id).style.backgroundColor = listOfObjTiles[i].color
+
+            if (firstTile === null && secondTile === null ) {
+                firstTile = listOfObjTiles[i].color;  
+                firstTileID = listOfObjTiles[i].id;
+                console.log('you choose ' + firstTile + " as your first tile")
+            } 
+            else if(secondTile == null){
+                secondTile = listOfObjTiles[i].color
+                secondTileID = listOfObjTiles[i].id
+                console.log('you choose ' + secondTile + " as your second tile")
+
+                if(firstTileID === secondTileID){
+                    console.log('clicked on same tile twice,try again')
+                    firstTile = null
+                    secondTile = null
+                }
+
+                if(firstTile != null & firstTile === secondTile){
+                    console.log("this is the index of your color " + colorsArr.indexOf(firstTile))
+
+                    console.log('match found')
+                    
+                    // switch(colorsArr.tofind(firstTile))
+
+                    firstTile = null
+                    secondTile = null
+                }
+                else {
+                    console.log('not matched,try again')
+                    document.getElementById(firstTileID).style.backgroundColor = 'black'
+                    document.getElementById(secondTileID).style.backgroundColor = 'black'
+                    
+                    
+                    firstTile = null
+                    secondTile = null
+                    
+                }
+            }
+
+         })
         
         console.log(listOfObjTiles[i].color)      //loop to figure out the color of each tile
         
     }
 
-  
-     do{
+
+
+    //  do{
         
-        //print out make your first choice
-        if(choiceCount == 0){
-            break;
-        }
-        else if (choiceCount == 1){
+    //     //print out make your first choice
+    //     if(choiceCount == 0){
+    //         break;
+    //     }
+    //     else if (choiceCount == 1){
             
-        }
-        else {
-            console.log('you made two choices')
-            break;
-        }
+    //     }
+    //     else {
+    //         console.log('you made two choices')
+    //         break;
+    //     }
 
 
-    } while(!gameDone)
+    // } while(!gameDone)
     
         
 
