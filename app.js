@@ -5,6 +5,9 @@ let gameDone = false
 
 let choiceCount = 0;
 
+let firstTile = null;
+let secondTile = null;
+
 let pair0 = false
 let pair1 = false
 let pair2 = false
@@ -158,7 +161,20 @@ function giveColor(){
                 console.log('clicked')
                 
                 document.getElementById(listOfObjTiles[i].id).style.backgroundColor = listOfObjTiles[i].color
-                // choiceCount++
+
+
+                if (firstTile === null ) {
+                firstTile = listOfObjTiles[i].color;  
+                console.log('you choose ' + firstTile + " as your first tile")
+                } 
+                else if(secondTile == null){
+                    secondTile = listOfObjTiles[i].color
+                    console.log('you choose ' + secondTile + " as your second tile")
+                }
+
+
+
+
 
              })
 
@@ -174,6 +190,16 @@ function giveColor(){
 
      giveColor()   //invokes function to assign each tile a color
      coverTiles()  
+
+
+
+
+
+
+     
+        pair0 == true;
+        console.log(pair0)
+     
     
     for(let i = 0; i < listOfObjTiles.length; i++){   //this loop gives every tile a click function 
         
@@ -182,30 +208,33 @@ function giveColor(){
     }
 
   
+     do{
+        
+        //print out make your first choice
+        if(choiceCount == 0){
+            break;
+        }
+        else if (choiceCount == 1){
+            
+        }
+        else {
+            console.log('you made two choices')
+            break;
+        }
+
+
+    } while(!gameDone)
+    
+        
+
+
+
+
+
+
+
+
      
-
-      //   do {
-
-
-    //     //print out make your first choice
-    //     if(choiceCount == 0){
-            
-    //     }
-    //     else if (choiceCount == 1){
-            
-    //     }
-    //     else {
-    //         console.log('you made two choices')
-    //     }
-
-
-
-
-
-
-
-
-    //  } while(!gameDone)
 
      
 
